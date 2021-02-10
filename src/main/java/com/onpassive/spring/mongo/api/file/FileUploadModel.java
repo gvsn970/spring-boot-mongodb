@@ -4,9 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-import javax.persistence.Lob;
-
-import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -23,14 +20,13 @@ public class FileUploadModel implements Serializable {
 	private String name;
 	@Field(value = "FILE_TYPE")
 	private String type;
-	@Lob
+	
 	@Field(value = "FILE_DATA")
 	private byte[] data;
 
 	@Field(value = "FILE_URL")
 	private String url;
 
-	@CreationTimestamp
 	@Field(value = "CREATED_TIME")
 	private LocalDateTime createdTime;
 
